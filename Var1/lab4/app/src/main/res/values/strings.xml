@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">lab 4</string>
+    <string name="checkBoxText">Флажок</string>
+    <string name="buttonText">Кнопка</string>
+    <string name="editTextHint">Поле для ввода текста</string>
+    <string name="listView1Text">Первый текстовый список:</string>
+    <string name="listView2Text">Второй текстовый список:</string>
+</resources>

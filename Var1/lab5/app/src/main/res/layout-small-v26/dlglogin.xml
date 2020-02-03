@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtLoginName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textLogin" />
+
+    <EditText
+        android:id="@+id/txtLoginValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/loginnnnnh"
+        android:inputType="textPersonName"
+        android:text="@string/txtLogValue" />
+
+    <TextView
+        android:id="@+id/txtPasswordName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textPassName" />
+
+    <EditText
+        android:id="@+id/txtPasswordValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/passssssssssH"
+        android:inputType="textPassword"
+        android:text="@string/txtpassValue" />
+
+</LinearLayout>

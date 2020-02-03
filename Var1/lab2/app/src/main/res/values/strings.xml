@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">lab 2</string>
+    <string name="textview1">Large Text</string>
+    <string name="textview2">Large Text</string>
+    <string name="button4">Button</string>
+    <string name="button3">Button</string>
+    <string name="button1">Button</string>
+    <string name="button2Go">Go</string>
+</resources>

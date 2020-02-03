@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lab5</string>
+    <string name="button">Установить логин и пароль</string>
+    <string name="goodtext">Ваши данные изменены</string>
+    <string name="textLogin">Логин:</string>
+    <string name="textPassName">Пароль</string>
+    <string name="txtpassValue"></string>
+    <string name="txtLogValue"></string>
+    <string name="passssssssssH">Ваш пароль</string>
+    <string name="loginnnnnh">Ваш логин</string>
+</resources>

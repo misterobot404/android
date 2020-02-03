@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lab6</string>
+    <string name="frag1_text">Fragment 1</string>
+    <string name="frag2_text">Fragment 2</string>
+    <string name="number_list">Список Логинов:</string>
+    <string name="empty">Нет данных</string>
+    <string name="nmbt">Номер телефона:</string>
+    <string name="fio">ФИО:</string>
+    <string name="dlzh">Должность</string>
+    <string-array name="names">
+        <item>Иван</item>
+        <item>Марья</item>
+        <item>Петр</item>
+        <item>Антон</item>
+        <item>Даша</item>
+    </string-array>
+
+</resources>

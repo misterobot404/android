@@ -1,0 +1,7 @@
+android:shrinkColumns - колонки для переноса текста
+
+android:stretchColumns - содержимое растянуто по всем колонкам.
+
+android:layout_span - колонки для объединения
+
+android:gravity - выравнивание
