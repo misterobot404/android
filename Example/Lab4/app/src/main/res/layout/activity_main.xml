@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+     
+        
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Введите ваше имя:"
+                android:id="@+id/textView" android:layout_gravity="left|center_vertical"/>
+        
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical" />
+        
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:text="Введите вашу вамилию:" />
+        
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical" />
+        
+
+    <Button
+        android:id="@+id/btnActTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:onClick="goNewView"
+        android:text="Go to Activity" />
+     
+</LinearLayout>
+

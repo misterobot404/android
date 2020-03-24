@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Закусило 6ИСб-1 Лаб 2</string>
+    <string name="button">Рейтинг</string>
+    <string name="textView">Список группы 6ИСб-1</string>
+
+    <string-array name="name">
+        <item>Закусило А.</item>
+        <item>Павлюк Е.</item>
+        <item>Хусейнов О.</item>
+        <item>Ходжазода Н.</item>
+        <item>Алишерова Ш.</item>
+        <item>Пронин А.</item>
+    </string-array>
+
+</resources>

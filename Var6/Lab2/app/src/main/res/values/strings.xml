@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Лабораторная 2</string>
+    <string name="button_1">0</string>
+    <string name="button_2">1</string>
+    <string name="button_3">2</string>
+    <string name="button_4">3</string>
+    <string name="button_5">4</string>
+    <string name="button_6">5</string>
+    <string name="button_7">6</string>
+    <string name="button_8">7</string>
+    <string name="button_9">8</string>
+    <string name="button_10">9</string>
+    <string name="button_11">A</string>
+    <string name="button_12">B</string>
+    <string name="button_13">C</string>
+    <string name="button_14">D</string>
+    <string name="button_15">E</string>
+    <string name="button_16">F</string>
+    <string name="button_17">ОТКРЫТЬ</string>
+</resources>
+

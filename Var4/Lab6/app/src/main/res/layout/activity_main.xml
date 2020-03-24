@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="30dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Выберите груз"
+        android:textSize="18sp"></TextView>
+
+    <ListView
+        android:id="@+id/listView_items"
+        android:layout_width="match_parent"
+        android:layout_height="191dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbarSize="19dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Дата прихода судна c товаром"
+        android:textSize="18sp"></TextView>
+
+    <EditText
+        android:id="@+id/multilineText_times"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center|start|center_horizontal|top|center_vertical"
+        android:inputType="textMultiLine"
+        android:textAlignment="center" />
+
+</LinearLayout>

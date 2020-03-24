@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Павлюк 6ИСб-1</string>
+    <string name="item_1">Playlist</string>
+    <string name="item_2">Messaging</string>
+    <string name="item_3">Settings</string>
+    <string name="item_4">Notebook</string>
+    <string name="item_5">Files</string>
+    <string name="item_6">Lock</string>
+    <string name="item_7">Games</string>
+    <string name="item_8">Videos</string>
+</resources>
