@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item1"
+        android:icon="@android:drawable/ic_menu_search"
+        android:onClick="onClick"
+        android:title=""
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/item2"
+        android:icon="@android:drawable/ic_menu_share"
+        android:onClick="onClick"
+        android:title=""
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/item3"
+        android:icon="@android:drawable/ic_menu_send"
+        android:onClick="onClick"
+        android:title=""
+        app:showAsAction="always"></item>
+
+    <!--Двухуровневое меню-->
+    <item
+        android:id="@+id/list_item1"
+        android:onClick="onClick"
+        android:orderInCategory="1"
+        android:title="@string/item_1"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/list_item1_1"
+                android:onClick="onClick"
+                android:orderInCategory="1"
+                android:title="@string/item_1_1"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/list_item1_2"
+                android:onClick="onClick"
+                android:orderInCategory="2"
+                android:title="@string/item_1_2"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/list_item2"
+        android:onClick="onClick"
+        android:orderInCategory="2"
+        android:title="@string/item_2"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/list_item3"
+        android:onClick="onClick"
+        android:orderInCategory="3"
+        android:title="@string/item_3"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/list_item3_1"
+                android:onClick="onClick"
+                android:orderInCategory="1"
+                android:title="@string/item_3_1"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/list_item3_2"
+                android:onClick="onClick"
+                android:orderInCategory="2"
+                android:title="@string/item_3_2"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>
