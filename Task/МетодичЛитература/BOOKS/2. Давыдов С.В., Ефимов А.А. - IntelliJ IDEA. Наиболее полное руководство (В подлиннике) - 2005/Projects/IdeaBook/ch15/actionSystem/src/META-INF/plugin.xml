@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<!DOCTYPE idea-plugin SYSTEM "http://plugins.intellij.net/plugin.dtd">
+
+<idea-plugin url="@project.url@">
+    <vendor url="@project.author.url@" email="@project.author.email@">@project.author@</vendor>
+    <name>@project.title@</name>
+    <version>@project.version@</version>
+    <idea-version since-build="@idea.build.number@"/>
+
+    <application-components>
+        <component>
+            <implementation-class>org.intellij.samples.actionSystem.SampleActionManager</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
+

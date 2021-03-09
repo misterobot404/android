@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE weblogic-ejb-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 7.0.0 EJB//EN" "http://www.bea.com/servers/wls700/dtd/weblogic-ejb-jar.dtd" >
+
+
+<weblogic-ejb-jar>
+
+    <weblogic-enterprise-bean>
+        <ejb-name>MyBMPEntityEJB</ejb-name>
+        <jndi-name>test</jndi-name>
+        <local-jndi-name>localtest</local-jndi-name>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>MyCMPEntityEJB</ejb-name>
+        <jndi-name>test</jndi-name>
+        <local-jndi-name>localtest</local-jndi-name>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>MySessionEJB</ejb-name>
+        <jndi-name>test</jndi-name>
+        <local-jndi-name>localtest</local-jndi-name>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>MyMessageEJB</ejb-name>
+        <jndi-name/>
+        <local-jndi-name/>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>MyCMPEntity2EJB</ejb-name>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

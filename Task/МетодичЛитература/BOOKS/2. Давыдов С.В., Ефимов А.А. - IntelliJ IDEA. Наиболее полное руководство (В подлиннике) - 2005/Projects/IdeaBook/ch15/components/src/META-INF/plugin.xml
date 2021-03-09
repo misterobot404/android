@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<!DOCTYPE idea-plugin SYSTEM "http://plugins.intellij.net/plugin.dtd">
+
+<idea-plugin url="@project.url@">
+    <vendor url="@project.author.url@" email="@project.author.email@">@project.author@</vendor>
+    <name>@project.title@</name>
+    <version>@project.version@</version>
+    <idea-version since-build="@idea.build.number@"/>
+    <!-- Application components of the plugin -->
+    <application-components>
+        <component>
+            <implementation-class>org.intellij.samples.components.SampleApplicationComponent</implementation-class>
+        </component>
+    </application-components>
+    <!-- Project components -->
+    <project-components>
+        <component>
+            <implementation-class>org.intellij.samples.components.SampleProjectComponent</implementation-class>
+        </component>
+    </project-components>
+    <!-- Module components -->
+    <module-components>
+        <component>
+            <implementation-class>org.intellij.samples.components.SampleModuleComponent</implementation-class>
+        </component>
+    </module-components>
+</idea-plugin>
+

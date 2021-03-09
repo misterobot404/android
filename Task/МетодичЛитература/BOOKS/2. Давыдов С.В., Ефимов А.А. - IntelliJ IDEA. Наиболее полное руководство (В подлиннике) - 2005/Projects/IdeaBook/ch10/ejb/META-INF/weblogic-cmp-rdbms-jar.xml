@@ -1,0 +1,52 @@
+<!DOCTYPE weblogic-rdbms-jar PUBLIC 
+ '-//BEA Systems, Inc.//DTD WebLogic 7.0.0 EJB RDBMS Persistence//EN' 'http://www.bea.com/servers/wls700/dtd/weblogic-rdbms20-persistence-700.dtd'>
+<weblogic-rdbms-jar>
+
+    <weblogic-rdbms-bean>
+        <ejb-name>MyBMPEntityEJB</ejb-name>
+        <data-source-name>TestDatasource</data-source-name>
+    </weblogic-rdbms-bean>
+    <weblogic-rdbms-bean>
+        <ejb-name>MyCMPEntityEJB</ejb-name>
+        <field-group>
+            <group-name>myGroup</group-name>
+            <cmp-field>id</cmp-field>
+            <cmp-field>myField</cmp-field>
+        </field-group>
+        <automatic-key-generation>
+            <generator-type>NAMED_SEQUENCE_TABLE</generator-type>
+            <generator-name>X</generator-name>
+        </automatic-key-generation>
+    </weblogic-rdbms-bean>
+    <weblogic-rdbms-bean>
+        <ejb-name>MySessionEJB</ejb-name>
+    </weblogic-rdbms-bean>
+    <weblogic-rdbms-bean>
+        <ejb-name>MyCMPEntity2EJB</ejb-name>
+        <data-source-name>TestDatasource</data-source-name>
+    </weblogic-rdbms-bean>
+    <weblogic-rdbms-relation>
+        <relation-name>MyCMPEntityEJB - MyCMPEntityEJB</relation-name>
+        <weblogic-relationship-role>
+            <relationship-role-name>role1</relationship-role-name>
+            <relationship-role-map>
+                <column-map>
+                    <foreign-key-column>FK column</foreign-key-column>
+                    <key-column>PK column</key-column>
+                </column-map>
+            </relationship-role-map>
+        </weblogic-relationship-role>
+        <weblogic-relationship-role>
+            <relationship-role-name>role2</relationship-role-name>
+            <relationship-role-map>
+                <column-map>
+                    <foreign-key-column>FK column</foreign-key-column>
+                    <key-column>PK column</key-column>
+                </column-map>
+            </relationship-role-map>
+        </weblogic-relationship-role>
+    </weblogic-rdbms-relation>
+    <create-default-dbms-tables>True</create-default-dbms-tables>
+
+</weblogic-rdbms-jar>
+

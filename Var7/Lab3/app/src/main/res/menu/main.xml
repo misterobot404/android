@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item8"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title=""
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/item9"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title=""
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/item10"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title=""
+        app:showAsAction="always"></item>
+
+
+    <!--Выпадющее меню-->
+    <item
+            android:id="@+id/item1"
+            android:icon="@android:drawable/ic_media_play"
+            android:title="@string/item_1"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/item2"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/item_2"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/item3"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:title="@string/item_3"
+            app:showAsAction="never" />
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/item4"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/item_4" />
+        <item
+                android:id="@+id/item5"
+                android:icon="@android:drawable/sym_contact_card"
+                android:title="@string/item_5" />
+    </group>
+
+    <item
+            android:id="@+id/item6"
+            android:checkable="true"
+            android:icon="@android:drawable/ic_lock_lock"
+            android:title="@string/item_6" />
+    <item
+            android:id="@+id/item7"
+            android:checkable="true"
+            android:icon="@android:drawable/star_big_on"
+            android:title="@string/item_7" />
+</menu>

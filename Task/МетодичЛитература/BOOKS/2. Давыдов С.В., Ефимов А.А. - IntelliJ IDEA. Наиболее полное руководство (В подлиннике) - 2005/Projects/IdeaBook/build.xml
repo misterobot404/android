@@ -1,0 +1,15 @@
+<project name="sample" default="main" basedir=".">
+    <property name="some.path" value="${basedir}"/>
+
+    <target name="main" depends="another" >
+        <echo message="Some message" />
+    </target>
+
+    <target name="another" >
+
+    </target>
+
+    <target name="some" >
+
+    </target>
+</project>

@@ -1,0 +1,12 @@
+All files in the project has following type of comments:
+
+/**
+ * "IntelliJ IDEA Book"
+ * Stanislav Davydov (davidovsv@yandex.ru) (c) 2004
+ */
+
+public cl
+<Here is class defenition>
+
+
+So, this is a structure.

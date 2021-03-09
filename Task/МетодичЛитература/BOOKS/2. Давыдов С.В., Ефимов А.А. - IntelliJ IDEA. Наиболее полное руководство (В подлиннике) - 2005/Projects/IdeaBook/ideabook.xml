@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="ideabook" default="all">
+  
+  
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- The task requires the following libraries from IntelliJ IDEA distribution: -->
+  <!--   javac2.jar; jdom.jar; bcel.jar -->
+  <taskdef name="javac2" classname="com.intellij.uiDesigner.ant.Javac2"/>
+  <!-- Path variables -->
+  <property name="path.variable.projectroot" value="D:/Projects/myProject"/>
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="compiler.excluded"/>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+  </patternset>
+  <!-- JDK definitions -->
+  
+  <property name="jdk.home.java_version_1.4.2_04" value="C:/j2sdk1.4.2_04"/>
+  <path id="jdk.classpath.java_version_1.4.2_04">
+    <fileset dir="${jdk.home.java_version_1.4.2_04}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/sunrsasign.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/ldapsec.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="jdk.home.java_version_1.5.0" value="C:/jdk1.5.0"/>
+  <path id="jdk.classpath.java_version_1.5.0">
+    <fileset dir="${jdk.home.java_version_1.5.0}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.java_version_1.4.2_04}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.java_version_1.4.2_04"/>
+  <!-- Project Libraries -->
+  
+  <path id="library.php_java.classpath">
+    <pathelement location="C:/PHP/extensions/php_java.jar"/>
+  </path>
+  
+  <path id="library.junit.classpath">
+    <pathelement location="C:/IntelliJ-IDEA-4.5/lib/junit.jar"/>
+  </path>
+  <!-- Global Libraries -->
+  
+  <path id="library.tools.classpath">
+    <pathelement location="C:/j2sdk1.4.2_04/lib/tools.jar"/>
+  </path>
+  
+  <path id="library.apache-ant-1.6.classpath">
+    <pathelement location="C:/ant/apache-ant-1.6.1"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-commons-net.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-icontract.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jdepend.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/xml-apis.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-xslp.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-nodeps.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jmf.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jakarta-bcel.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-xalan1.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-xalan2.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jai.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-vaj.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-junit.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-apache-bsf.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-netrexx.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-starteam.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jakarta-oro.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-stylebook.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-launcher.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jakarta-regexp.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-swing.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-antlr.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jsch.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-javamail.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-apache-resolver.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/xercesImpl.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-commons-logging.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-weblogic.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-jakarta-log4j.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant.jar"/>
+    <pathelement location="C:/ant/apache-ant-1.6.1/lib/ant-trax.jar"/>
+  </path>
+  <!-- Application Server Libraries -->
+  
+  <path id="library.tomcat.classpath">
+    <pathelement location="C:/tomcat/common/lib/activation.jar"/>
+    <pathelement location="C:/tomcat/common/lib/jdbc2_0-stdext.jar"/>
+    <pathelement location="C:/tomcat/common/lib/jndi.jar"/>
+    <pathelement location="C:/tomcat/common/lib/jta-spec1_0_1.jar"/>
+    <pathelement location="C:/tomcat/common/lib/mail.jar"/>
+    <pathelement location="C:/tomcat/common/lib/naming-common.jar"/>
+    <pathelement location="C:/tomcat/common/lib/naming-resources.jar"/>
+    <pathelement location="C:/tomcat/common/lib/servlet.jar"/>
+    <pathelement location="C:/tomcat/common/lib/tyrex-0.9.7.0.jar"/>
+    <pathelement location="C:/tomcat/common/lib/tyrex.license"/>
+    <pathelement location="C:/tomcat/common/lib/xerces.jar"/>
+  </path>
+  
+  <path id="library.j2ee_1.3.1.classpath">
+    <pathelement location="C:/j2sdkee1.3.1/lib/ejb10deployment.jar"/>
+    <pathelement location="C:/j2sdkee1.3.1/lib/j2ee-ri-svc.jar"/>
+    <pathelement location="C:/j2sdkee1.3.1/lib/j2ee.jar"/>
+    <pathelement location="C:/j2sdkee1.3.1/lib/j2eetools.jar"/>
+    <pathelement location="C:/j2sdkee1.3.1/lib/jhall.jar"/>
+  </path>
+  
+  
+  <dirname property="module.ch13.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch13" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch13" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch13" value="${compiler.args}"/>
+  
+  <property name="ch13.output.dir" value="undefined"/>
+  <property name="ch13.testoutput.dir" value="undefined"/>
+  
+  <path id="ch13.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch13.module.classpath">
+    <path refid="${module.jdk.classpath.ch13}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch13"/>
+  
+  <patternset id="excluded.from.compilation.ch13">
+    <patternset refid="excluded.from.module.ch13"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  
+  <target name="compile.module.ch13" depends="compile.module.ch13.production,compile.module.ch13.tests" description="compile module ch13"/>
+  
+  <target name="compile.module.ch13.production" description="compile module ch13 production classes"/>
+  
+  <target name="compile.module.ch13.tests" depends="compile.module.ch13.production" description="compile module ch13 test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch13" description="cleanup module">
+    <delete dir="${ch13.output.dir}"/>
+    <delete dir="${ch13.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch12.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch12" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch12" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch12" value="${compiler.args}"/>
+  
+  <property name="ch12.output.dir" value="${module.ch12.basedir}/ch12/classes"/>
+  <property name="ch12.testoutput.dir" value="${module.ch12.basedir}/ch12/classes"/>
+  
+  <path id="ch12.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch12.module.classpath">
+    <path refid="${module.jdk.classpath.ch12}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch12"/>
+  
+  <patternset id="excluded.from.compilation.ch12">
+    <patternset refid="excluded.from.module.ch12"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch12.module.sourcepath">
+    <dirset dir="${module.ch12.basedir}/ch12">
+      <include name="src"/>
+    </dirset>
+    <dirset dir="${module.ch12.basedir}/../cvsTestProject">
+      <include name="alt-src"/>
+      <include name="src"/>
+    </dirset>
+    <dirset dir="${module.ch12.basedir}/../ssTestProject">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch12" depends="compile.module.ch12.production,compile.module.ch12.tests" description="compile module ch12"/>
+  
+  <target name="compile.module.ch12.production" description="compile module ch12 production classes">
+    <mkdir dir="${ch12.output.dir}"/>
+    <javac2 destdir="${ch12.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch12}/bin/javac">
+      <compilerarg line="${compiler.args.ch12}"/>
+      <bootclasspath refid="ch12.module.bootclasspath"/>
+      <classpath refid="ch12.module.classpath"/>
+      <src refid="ch12.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch12"/>
+    </javac2>
+    <copy todir="${ch12.output.dir}">
+      <fileset dir="${module.ch12.basedir}/ch12/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch12"/>
+      </fileset>
+      <fileset dir="${module.ch12.basedir}/../cvsTestProject/alt-src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch12"/>
+      </fileset>
+      <fileset dir="${module.ch12.basedir}/../cvsTestProject/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch12"/>
+      </fileset>
+      <fileset dir="${module.ch12.basedir}/../ssTestProject/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch12"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch12.tests" depends="compile.module.ch12.production" description="compile module ch12 test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch12" description="cleanup module">
+    <delete dir="${ch12.output.dir}"/>
+    <delete dir="${ch12.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch9-web.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch9-web" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch9-web" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch9-web" value="${compiler.args}"/>
+  
+  <property name="ch9-web.output.dir" value="${module.ch9-web.basedir}/ch9/web/resources/WEB-INF/classes"/>
+  <property name="ch9-web.testoutput.dir" value="${module.ch9-web.basedir}/ch9/web/resources/WEB-INF/classes"/>
+  
+  <path id="ch9-web.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch9-web.module.classpath">
+    <path refid="${module.jdk.classpath.ch9-web}"/>
+    <path refid="library.tomcat.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch9-web"/>
+  
+  <patternset id="excluded.from.compilation.ch9-web">
+    <patternset refid="excluded.from.module.ch9-web"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  
+  <target name="compile.module.ch9-web" depends="compile.module.ch9-web.production,compile.module.ch9-web.tests" description="compile module ch9-web"/>
+  
+  <target name="compile.module.ch9-web.production" description="compile module ch9-web production classes"/>
+  
+  <target name="compile.module.ch9-web.tests" depends="compile.module.ch9-web.production" description="compile module ch9-web test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch9-web" description="cleanup module">
+    <delete dir="${ch9-web.output.dir}"/>
+    <delete dir="${ch9-web.testoutput.dir}"/>
+  </target>
+  
+  <property name="ch9-web.dir.exploded" value="${module.ch9-web.basedir}/ch9/web/resources"/>
+  <target name="j2ee.build.ch9-web" depends="compile.module.ch9-web" description="Build configured J2EE directories and archives for module 'ch9-web'">
+    <antcall target="j2ee.build.exploded.ch9-web">
+      <param name="j2ee.dir.exploded" value="${ch9-web.dir.exploded}"/>
+    </antcall>
+  </target>
+  <target name="j2ee.build.exploded.ch9-web" description="Build exploded directory for module 'ch9-web'">
+    <copy file="${module.ch9-web.basedir}/ch9/web/resources/WEB-INF/web.xml" tofile="${j2ee.dir.exploded}/WEB-INF/web.xml"/>
+    <copy todir="${j2ee.dir.exploded}/">
+      <fileset dir="${module.ch9-web.basedir}/ch9/web/resources"/>
+    </copy>
+  </target>
+  <target name="j2ee.build.jar.ch9-web" description="Build J2EE archive for module 'ch9-web'">
+    <dirname property="jar.dir" file="${j2ee.path.jar}"/>
+    <mkdir dir="${jar.dir}"/>
+    <jar destfile="${j2ee.path.jar}" duplicate="preserve">
+      <manifest>
+        <attribute name="Created-By" value="IntelliJ IDEA"/>
+        <attribute name="Manifest-Version" value="1.0"/>
+      </manifest>
+      <zipfileset dir="${module.ch9-web.basedir}/ch9/web/resources" prefix=""/>
+      <zipfileset file="${module.ch9-web.basedir}/ch9/web/resources/WEB-INF/web.xml" prefix="WEB-INF"/>
+    </jar>
+  </target>
+  
+  
+  <dirname property="module.ch9.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch9" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch9" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch9" value="${compiler.args}"/>
+  
+  <property name="ch9.output.dir" value="${module.ch9.basedir}/ch9/classes"/>
+  <property name="ch9.testoutput.dir" value="${module.ch9.basedir}/ch9/classes"/>
+  
+  <path id="ch9.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch9.module.classpath">
+    <path refid="${module.jdk.classpath.ch9}"/>
+    <path refid="library.junit.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch9"/>
+  
+  <patternset id="excluded.from.compilation.ch9">
+    <patternset refid="excluded.from.module.ch9"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch9.module.sourcepath">
+    <dirset dir="${module.ch9.basedir}/ch9">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="ch9.module.test.sourcepath">
+    <dirset dir="${module.ch9.basedir}/ch9">
+      <include name="test"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch9" depends="compile.module.ch9.production,compile.module.ch9.tests" description="compile module ch9"/>
+  
+  <target name="compile.module.ch9.production" description="compile module ch9 production classes">
+    <mkdir dir="${ch9.output.dir}"/>
+    <javac2 destdir="${ch9.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch9}/bin/javac">
+      <compilerarg line="${compiler.args.ch9}"/>
+      <bootclasspath refid="ch9.module.bootclasspath"/>
+      <classpath refid="ch9.module.classpath"/>
+      <src refid="ch9.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch9"/>
+    </javac2>
+    <copy todir="${ch9.output.dir}">
+      <fileset dir="${module.ch9.basedir}/ch9/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch9"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch9.tests" depends="compile.module.ch9.production" description="compile module ch9 test classes" unless="skip.tests">
+    <mkdir dir="${ch9.testoutput.dir}"/>
+    <javac2 destdir="${ch9.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch9}/bin/javac">
+      <compilerarg line="${compiler.args.ch9}"/>
+      <classpath refid="ch9.module.classpath"/>
+      <classpath location="${ch9.output.dir}"/>
+      <src refid="ch9.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch9"/>
+    </javac2>
+    <copy todir="${ch9.testoutput.dir}">
+      <fileset dir="${module.ch9.basedir}/ch9/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch9"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.ch9" description="cleanup module">
+    <delete dir="${ch9.output.dir}"/>
+    <delete dir="${ch9.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch7.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch7" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch7" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch7" value="${compiler.args}"/>
+  
+  <property name="ch7.output.dir" value="${module.ch7.basedir}/ch7/classes"/>
+  <property name="ch7.testoutput.dir" value="${module.ch7.basedir}/ch7/classes"/>
+  
+  <path id="ch7.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch7.module.classpath">
+    <path refid="${module.jdk.classpath.ch7}"/>
+    <pathelement location="C:/IntelliJ-IDEA-4.5/redist/forms_rt.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch7"/>
+  
+  <patternset id="excluded.from.compilation.ch7">
+    <patternset refid="excluded.from.module.ch7"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch7.module.sourcepath">
+    <dirset dir="${module.ch7.basedir}/ch7">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch7" depends="compile.module.ch7.production,compile.module.ch7.tests" description="compile module ch7"/>
+  
+  <target name="compile.module.ch7.production" description="compile module ch7 production classes">
+    <mkdir dir="${ch7.output.dir}"/>
+    <javac2 destdir="${ch7.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch7}/bin/javac">
+      <compilerarg line="${compiler.args.ch7}"/>
+      <bootclasspath refid="ch7.module.bootclasspath"/>
+      <classpath refid="ch7.module.classpath"/>
+      <src refid="ch7.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch7"/>
+    </javac2>
+    <copy todir="${ch7.output.dir}">
+      <fileset dir="${module.ch7.basedir}/ch7/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch7"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch7.tests" depends="compile.module.ch7.production" description="compile module ch7 test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch7" description="cleanup module">
+    <delete dir="${ch7.output.dir}"/>
+    <delete dir="${ch7.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch8-generics.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch8-generics" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch8-generics" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch8-generics" value="${compiler.args}"/>
+  
+  <property name="ch8-generics.output.dir" value="${module.ch8-generics.basedir}/ch8/generics/classes"/>
+  <property name="ch8-generics.testoutput.dir" value="${module.ch8-generics.basedir}/ch8/generics/classes"/>
+  
+  <path id="ch8-generics.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch8-generics.module.classpath">
+    <path refid="${module.jdk.classpath.ch8-generics}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch8-generics"/>
+  
+  <patternset id="excluded.from.compilation.ch8-generics">
+    <patternset refid="excluded.from.module.ch8-generics"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch8-generics.module.sourcepath">
+    <dirset dir="${module.ch8-generics.basedir}/ch8/generics">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch8-generics" depends="compile.module.ch8-generics.production,compile.module.ch8-generics.tests" description="compile module ch8-generics"/>
+  
+  <target name="compile.module.ch8-generics.production" description="compile module ch8-generics production classes">
+    <mkdir dir="${ch8-generics.output.dir}"/>
+    <javac2 destdir="${ch8-generics.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch8-generics}/bin/javac">
+      <compilerarg line="${compiler.args.ch8-generics}"/>
+      <bootclasspath refid="ch8-generics.module.bootclasspath"/>
+      <classpath refid="ch8-generics.module.classpath"/>
+      <src refid="ch8-generics.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch8-generics"/>
+    </javac2>
+    <copy todir="${ch8-generics.output.dir}">
+      <fileset dir="${module.ch8-generics.basedir}/ch8/generics/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch8-generics"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch8-generics.tests" depends="compile.module.ch8-generics.production" description="compile module ch8-generics test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch8-generics" description="cleanup module">
+    <delete dir="${ch8-generics.output.dir}"/>
+    <delete dir="${ch8-generics.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch5-java.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch5-java" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch5-java" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch5-java" value="${compiler.args}"/>
+  
+  <property name="ch5-java.output.dir" value="${module.ch5-java.basedir}/ch5/java/classes"/>
+  <property name="ch5-java.testoutput.dir" value="${module.ch5-java.basedir}/ch5/java/classes"/>
+  
+  <path id="ch5-java.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch5-java.module.classpath">
+    <path refid="${module.jdk.classpath.ch5-java}"/>
+    <pathelement location="${module.ch5-java.basedir}/../siteengine/siteengine.jar"/>
+    <path refid="library.tools.classpath"/>
+    <path refid="library.php_java.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch5-java"/>
+  
+  <patternset id="excluded.from.compilation.ch5-java">
+    <patternset refid="excluded.from.module.ch5-java"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch5-java.module.sourcepath">
+    <dirset dir="${module.ch5-java.basedir}/ch5/java">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="ch5-java.module.test.sourcepath">
+    <dirset dir="${module.ch5-java.basedir}/ch5">
+      <include name="testSource"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch5-java" depends="compile.module.ch5-java.production,compile.module.ch5-java.tests" description="compile module ch5-java"/>
+  
+  <target name="compile.module.ch5-java.production" description="compile module ch5-java production classes">
+    <mkdir dir="${ch5-java.output.dir}"/>
+    <javac2 destdir="${ch5-java.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch5-java}/bin/javac">
+      <compilerarg line="${compiler.args.ch5-java}"/>
+      <bootclasspath refid="ch5-java.module.bootclasspath"/>
+      <classpath refid="ch5-java.module.classpath"/>
+      <src refid="ch5-java.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch5-java"/>
+    </javac2>
+    <copy todir="${ch5-java.output.dir}">
+      <fileset dir="${module.ch5-java.basedir}/ch5/java/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch5-java"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch5-java.tests" depends="compile.module.ch5-java.production" description="compile module ch5-java test classes" unless="skip.tests">
+    <mkdir dir="${ch5-java.testoutput.dir}"/>
+    <javac2 destdir="${ch5-java.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch5-java}/bin/javac">
+      <compilerarg line="${compiler.args.ch5-java}"/>
+      <classpath refid="ch5-java.module.classpath"/>
+      <classpath location="${ch5-java.output.dir}"/>
+      <src refid="ch5-java.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch5-java"/>
+    </javac2>
+    <copy todir="${ch5-java.testoutput.dir}">
+      <fileset dir="${module.ch5-java.basedir}/ch5/testSource">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch5-java"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.ch5-java" description="cleanup module">
+    <delete dir="${ch5-java.output.dir}"/>
+    <delete dir="${ch5-java.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch5-web.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch5-web" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch5-web" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch5-web" value="${compiler.args}"/>
+  
+  <property name="ch5-web.output.dir" value="${module.ch5-web.basedir}/ch5/web/resources/WEB-INF/classes"/>
+  <property name="ch5-web.testoutput.dir" value="${module.ch5-web.basedir}/ch5/web/resources/WEB-INF/classes"/>
+  
+  <path id="ch5-web.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch5-web.module.classpath">
+    <path refid="${module.jdk.classpath.ch5-web}"/>
+    <pathelement location="${ch5-java.output.dir}"/>
+    <path refid="library.tomcat.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch5-web"/>
+  
+  <patternset id="excluded.from.compilation.ch5-web">
+    <patternset refid="excluded.from.module.ch5-web"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  
+  <target name="compile.module.ch5-web" depends="compile.module.ch5-web.production,compile.module.ch5-web.tests" description="compile module ch5-web"/>
+  
+  <target name="compile.module.ch5-web.production" depends="compile.module.ch5-java" description="compile module ch5-web production classes"/>
+  
+  <target name="compile.module.ch5-web.tests" depends="compile.module.ch5-web.production" description="compile module ch5-web test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch5-web" description="cleanup module">
+    <delete dir="${ch5-web.output.dir}"/>
+    <delete dir="${ch5-web.testoutput.dir}"/>
+  </target>
+  
+  <property name="ch5-web.dir.exploded" value="${module.ch5-web.basedir}/ch5/web/resources"/>
+  <target name="j2ee.build.ch5-web" depends="compile.module.ch5-web, compile.module.ch5-java" description="Build configured J2EE directories and archives for module 'ch5-web'">
+    <antcall target="j2ee.build.exploded.ch5-web">
+      <param name="j2ee.dir.exploded" value="${ch5-web.dir.exploded}"/>
+    </antcall>
+  </target>
+  <target name="j2ee.build.exploded.ch5-web" description="Build exploded directory for module 'ch5-web'">
+    <copy file="${module.ch5-web.basedir}/ch5/web/resources/WEB-INF/web.xml" tofile="${j2ee.dir.exploded}/WEB-INF/web.xml"/>
+    <copy todir="${j2ee.dir.exploded}/WEB-INF/classes">
+      <fileset dir="${module.ch5-web.basedir}/ch5/java/classes"/>
+    </copy>
+    <copy todir="${j2ee.dir.exploded}/">
+      <fileset dir="${module.ch5-web.basedir}/ch5/web/resources"/>
+    </copy>
+  </target>
+  <target name="j2ee.build.jar.ch5-web" description="Build J2EE archive for module 'ch5-web'">
+    <dirname property="jar.dir" file="${j2ee.path.jar}"/>
+    <mkdir dir="${jar.dir}"/>
+    <jar destfile="${j2ee.path.jar}" duplicate="preserve">
+      <manifest>
+        <attribute name="Created-By" value="IntelliJ IDEA"/>
+        <attribute name="Manifest-Version" value="1.0"/>
+      </manifest>
+      <zipfileset dir="${module.ch5-web.basedir}/ch5/web/resources" prefix=""/>
+      <zipfileset dir="${module.ch5-web.basedir}/ch5/java/classes" prefix="WEB-INF/classes"/>
+      <zipfileset file="${module.ch5-web.basedir}/ch5/web/resources/WEB-INF/web.xml" prefix="WEB-INF"/>
+    </jar>
+  </target>
+  
+  
+  <dirname property="module.ch8.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch8" value="${project.jdk.home}"/>
+  <property name="module.jdk.classpath.ch8" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ch8" value="${compiler.args}"/>
+  
+  <property name="ch8.output.dir" value="${module.ch8.basedir}/ch8/classes"/>
+  <property name="ch8.testoutput.dir" value="${module.ch8.basedir}/ch8/classes"/>
+  
+  <path id="ch8.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch8.module.classpath">
+    <path refid="${module.jdk.classpath.ch8}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch8"/>
+  
+  <patternset id="excluded.from.compilation.ch8">
+    <patternset refid="excluded.from.module.ch8"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch8.module.sourcepath">
+    <dirset dir="${module.ch8.basedir}/ch8">
+      <include name="alt-src"/>
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch8" depends="compile.module.ch8.production,compile.module.ch8.tests" description="compile module ch8"/>
+  
+  <target name="compile.module.ch8.production" description="compile module ch8 production classes">
+    <mkdir dir="${ch8.output.dir}"/>
+    <javac2 destdir="${ch8.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch8}/bin/javac">
+      <compilerarg line="${compiler.args.ch8}"/>
+      <bootclasspath refid="ch8.module.bootclasspath"/>
+      <classpath refid="ch8.module.classpath"/>
+      <src refid="ch8.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch8"/>
+    </javac2>
+    <copy todir="${ch8.output.dir}">
+      <fileset dir="${module.ch8.basedir}/ch8/alt-src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch8"/>
+      </fileset>
+      <fileset dir="${module.ch8.basedir}/ch8/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch8"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch8.tests" depends="compile.module.ch8.production" description="compile module ch8 test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch8" description="cleanup module">
+    <delete dir="${ch8.output.dir}"/>
+    <delete dir="${ch8.testoutput.dir}"/>
+  </target>
+  
+  
+  <dirname property="module.ch11.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ch11" value="${jdk.home.java_version_1.5.0}"/>
+  <property name="module.jdk.classpath.ch11" value="jdk.classpath.java_version_1.5.0"/>
+  
+  <property name="compiler.args.ch11" value="${compiler.args}"/>
+  
+  <property name="ch11.output.dir" value="${module.ch11.basedir}/ch11/classes"/>
+  <property name="ch11.testoutput.dir" value="${module.ch11.basedir}/ch11/classes"/>
+  
+  <path id="ch11.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ch11.module.classpath">
+    <path refid="${module.jdk.classpath.ch11}"/>
+    <path refid="library.apache-ant-1.6.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ch11"/>
+  
+  <patternset id="excluded.from.compilation.ch11">
+    <patternset refid="excluded.from.module.ch11"/>
+    <patternset refid="compiler.excluded"/>
+  </patternset>
+  
+  <path id="ch11.module.sourcepath">
+    <dirset dir="${module.ch11.basedir}/ch11">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ch11" depends="compile.module.ch11.production,compile.module.ch11.tests" description="compile module ch11"/>
+  
+  <target name="compile.module.ch11.production" description="compile module ch11 production classes">
+    <mkdir dir="${ch11.output.dir}"/>
+    <javac2 destdir="${ch11.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true" executable="${module.jdk.home.ch11}/bin/javac">
+      <compilerarg line="${compiler.args.ch11}"/>
+      <bootclasspath refid="ch11.module.bootclasspath"/>
+      <classpath refid="ch11.module.classpath"/>
+      <src refid="ch11.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ch11"/>
+    </javac2>
+    <copy todir="${ch11.output.dir}">
+      <fileset dir="${module.ch11.basedir}/ch11/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.ch11"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ch11.tests" depends="compile.module.ch11.production" description="compile module ch11 test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ch11" description="cleanup module">
+    <delete dir="${ch11.output.dir}"/>
+    <delete dir="${ch11.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.ch13, clean.module.ch11, clean.module.ch12, clean.module.ch8-generics, clean.module.ch5-web, clean.module.ch9-web, clean.module.ch5-java, clean.module.ch9, clean.module.ch8, clean.module.ch7" description="cleanup all"/>
+  
+  <target name="all" depends="init, clean, compile.module.ch13, compile.module.ch12, j2ee.build.ch9-web, compile.module.ch9, compile.module.ch7, compile.module.ch8-generics, compile.module.ch5-java, j2ee.build.ch5-web, compile.module.ch8, compile.module.ch11" description="build all"/>
+</project>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+    "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+    <tlib-version>1.2</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>Site Engine 3.0 TLD</short-name>
+    <uri>siteengine</uri>
+
+    <tag>
+        <name>web-folder</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.WebFolderTag</tag-class>
+        <display-name>Get web folder</display-name>
+        <description>Get web folder</description>
+    </tag>
+
+    <tag>
+        <name>property</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.PropertyTag</tag-class>
+        <display-name>Get property</display-name>
+        <description>Get property</description>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>page-menuname</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.MenuNameTag</tag-class>
+        <display-name>Print menu name of the page</display-name>
+        <description>Print menu name of the page</description>
+    </tag>
+
+    <tag>
+        <name>page-title</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.TitleTag</tag-class>
+        <display-name>Print title of the page</display-name>
+        <description>Print title of the page</description>
+    </tag>
+
+    <tag>
+        <name>page-description</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.DescriptionTag</tag-class>
+        <display-name>Print description of the page</display-name>
+        <description>Print description of the page</description>
+    </tag>
+
+    <tag>
+        <name>page-keywords</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.KeywordsTag</tag-class>
+        <display-name>Print keywords of the page</display-name>
+        <description>Print keywords of the page</description>
+    </tag>
+
+    <tag>
+        <name>external-link</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.ExternalLinkTag</tag-class>
+        <display-name>Specify link to external page</display-name>
+        <description>Specify link to external page, print it</description>
+        <attribute>
+            <name>pagePath</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>external-url</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.ExternalUrlTag</tag-class>
+        <display-name>Display external link URL</display-name>
+        <description>Display external link URL</description>
+        <attribute>
+            <name>pagePath</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>include-content</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.IncludeContentTag</tag-class>
+        <display-name>Include a page content</display-name>
+        <description>Include a content of the page into output</description>
+        <attribute>
+            <name>page</name>
+            <required>false</required>
+            <type>ru.narod.davidovsv.siteengine.Page</type>
+        </attribute>
+        <attribute>
+            <name>contentIndex</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>root-page</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.RootPageTag</tag-class>
+        <variable>
+            <name-from-attribute>id</name-from-attribute>
+            <variable-class>ru.narod.davidovsv.siteengine.Page</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>current-page</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.CurrentPageTag</tag-class>
+        <variable>
+            <name-from-attribute>id</name-from-attribute>
+            <variable-class>ru.narod.davidovsv.siteengine.Page</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>page</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.PageTag</tag-class>
+        <variable>
+            <name-from-attribute>id</name-from-attribute>
+            <variable-class>ru.narod.davidovsv.siteengine.Page</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <attribute>
+            <name>path</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>simple-menu</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.SimpleMenuTag</tag-class>
+        <body-content>JSP</body-content>
+        <variable>
+            <name-from-attribute>id</name-from-attribute>
+            <variable-class>ru.narod.davidovsv.siteengine.Page</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <attribute>
+            <name>startPage</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>tree-menu</name>
+        <tag-class>ru.narod.davidovsv.siteengine.tagex.TreeMenuTag</tag-class>
+        <body-content>JSP</body-content>
+        <variable>
+            <name-from-attribute>id</name-from-attribute>
+            <variable-class>ru.narod.davidovsv.siteengine.Page</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <variable>
+            <name-given>STYLE_ONE_LEVEL</name-given>
+            <variable-class>java.lang.Integer</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <variable>
+            <name-given>NEAREST_PAGE</name-given>
+            <variable-class>ru.narod.davidovsv.siteengine.Page</variable-class>
+            <declare>true</declare>
+            <scope>AT_BEGIN</scope>
+        </variable>
+        <attribute>
+            <name>startPage</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>ignoreNearestPage</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+    </tag>
+
+</taglib>

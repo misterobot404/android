@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<some>
+    <!--
+    Some comment
+    -->
+    <data id="1234">&aa;</data>
+    <info/>
+
+</some>
