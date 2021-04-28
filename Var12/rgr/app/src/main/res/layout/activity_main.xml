@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trim_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
+
+        <Button
+            android:id="@+id/go_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:onClick="stop"
+            android:text="⏹" />
+
+        <Button
+            android:id="@+id/back_to_pick_song"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:onClick="play"
+            android:text="▶️" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:onClick="toStart"
+            android:text="⏮" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:onClick="back5sec"
+            android:text="⏪" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:onClick="next5sec"
+            android:text="⏩" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:onClick="toEnd"
+            android:text="⏭" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:textOff="🔁 OFF"
+            android:textOn="🔁 ON" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <VideoView
+        android:id="@+id/VideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/buttonContainer"/>
+</RelativeLayout>
